@@ -1,5 +1,18 @@
+import cgi
 from database import conn
 from pathlib import Path
+
+
+def add_new_post(post):
+    cursor = conn.cursor()
+    cursor.execute(
+        """\
+        INSERT INTO post (title, content, author)
+        VALUES (:title, :content, :author);
+        """,
+        post,
+    )
+    conn.commit()
 
 def render_template(template_name, **context):
     template = Path(template_name).read_text()
@@ -47,6 +60,24 @@ def application(environ, start_response):
         )
         status = '200 OK'
 
+    elif path == '/new' and method == 'GET':
+        body = render_template(
+            'form.template.html'
+        )
+        status = '200 OK'
+
+    elif path == '/new' and method == 'POST':
+        form = cgi.FieldStorage(
+            fp=environ['wsgi.input'],
+            environ=environ,
+            keep_blank_values=1
+        )
+        post = {item.name: item.value for item in form.list}
+        add_new_post(post)
+        body = b'New post created with success!'
+
+        status = '201 Created'
+    
     headers = [('Content-type', 'text/html')]
     start_response(status, headers)
     return [body]
