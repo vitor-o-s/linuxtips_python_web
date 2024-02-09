@@ -4,9 +4,4 @@ title = "Meu Blog"
 extensions = [
     "blog.database:configure",
     "blog.commands:configure",
-    "flask_bootstrap:Bootstrap",
-    "blog.views:configure",
-    "blog.plugins:configure",
-    "blog.auth:configure",
-    "blog.admin:configure",
 ]
