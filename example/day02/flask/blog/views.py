@@ -6,7 +6,6 @@ from flask import (
     request,
     url_for,
     redirect,
-    session,
 )
 
 from blog.posts import (
