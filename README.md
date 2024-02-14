@@ -24,3 +24,13 @@ O Flask usa um padrão de projeto chamado [Application Factories](https://flask.
 python3 -c "import secrets; print(secrets.tojen_hex())"
 ```
 Gerando um token para as sessions do Flask
+
+# Django
+
+O Django trabalha com projetos e app. Inicie um projeto e adicione quantos app quiser dentro deste.
+
+```
+export DJANGO_SETTINGS_MODULE=djblog.settings
+# na pasta do projeto crie o setup.py e execute
+pip3 install -e .
+```
