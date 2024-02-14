@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog', # Necessário para que o django reconheça o app 
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,8 @@ WSGI_APPLICATION = 'djblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3', # Django funciona muito bem com bd relacional
+        'NAME': BASE_DIR / 'db.sqlite3', # Possível alterar o banco
     }
 }
 
