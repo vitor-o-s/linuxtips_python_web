@@ -34,3 +34,5 @@ export DJANGO_SETTINGS_MODULE=djblog.settings
 # na pasta do projeto crie o setup.py e execute
 pip3 install -e .
 ```
+
+O django segue o padrão Model - View -Template (MVT)
