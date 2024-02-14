@@ -11,7 +11,6 @@ setup(
         "flask-bootstrap",
         "mistune",
         "flask-simplelogin",
-        # "flask-admin",
-        # "flask-admin @ git+ssh://git@github.com/flask-admin/flask-admin#egg=flask-admin"
+        "flask-admin"
     ],
 )
