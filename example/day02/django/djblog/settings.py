@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'markdownify.apps.MarkdownifyConfig',
     'blog', # Necessário para que o django reconheça o app 
 ]
 
