@@ -19,3 +19,8 @@ docker stop mongoblog
 ```
 
 O Flask usa um padrão de projeto chamado [Application Factories](https://flask.palletsprojects.com/en/3.0.x/patterns/appfactories/)
+
+```
+python3 -c "import secrets; print(secrets.tojen_hex())"
+```
+Gerando um token para as sessions do Flask
