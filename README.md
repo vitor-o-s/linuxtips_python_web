@@ -35,4 +35,4 @@ export DJANGO_SETTINGS_MODULE=djblog.settings
 pip3 install -e .
 ```
 
-O django segue o padrão Model - View -Template (MVT)
+O django segue o padrão Model - View -Template (MVT) 
