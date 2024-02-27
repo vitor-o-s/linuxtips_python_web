@@ -12,12 +12,20 @@ class ListOption(str, Enum):
 
 @app.get("/{list_option}/list")
 async def generic_list(list_option: ListOption):
-    if list_option == ListOption.user:
-        data = ["jim", "pam", "dwight"]
-    elif list_option == ListOption.department:
-        data = ["Sales", "Management", "IT"]
-    elif list_option.value == "account":
-        data = [1234, 8888, 9898]
+    # Usando pattern matching
+    match list_option:
+        case ListOption.user:
+            data = ["jim", "pam", "dwight"]
+        case ListOption.department:
+            data = ["Sales", "Management", "IT"]
+        case ListOption.account:
+            data = [1234, 8888, 9898]
+    # if list_option == ListOption.user:
+    #     data = ["jim", "pam", "dwight"]
+    # if list_option == ListOption.department:
+    #     data = ["Sales", "Management", "IT"]
+    # elif list_option.value == "account":
+    #     data = [1234, 8888, 9898]
 
     return {list_option: data}
 
@@ -32,6 +40,7 @@ async def account_detail(number: int):
     return {"account": number}
 
 
+# O fast API consegue lidar naturalmente com path basta usar o conversor
 @app.get("/import/{filepath:path}")
 async def import_file(filepath: str):
     return {"importing": filepath}
