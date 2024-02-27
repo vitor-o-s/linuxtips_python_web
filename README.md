@@ -36,3 +36,11 @@ pip3 install -e .
 ```
 
 O django segue o padrão Model - View -Template (MVT) 
+
+# Fast API
+
+O Fast API é excelente para trabalhar com requisições assíncronas
+
+Ao inves de utilizarmos o WSGI agora a nossa interface no servidor será o ASGI (Assincrono)
+
+A ordem das rotas no nosso arquivo também importa
